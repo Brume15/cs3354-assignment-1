@@ -1,17 +1,81 @@
+import java.util.Scanner;
+
 /**
  * TODO: Add an appropriate Javadoc comment for this class.
  */
 public class GroceryManagementSystem {
 
     /**
-     * TODO: Add an appropriate Javadoc comment for this method.
+     * Runs the menu for viewing inventory and restocking existing items.
+     *
+     * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
-        int[] itemStocks = new int[10];   
+        int[] itemStocks = new int[10];
 
-        // TODO: Implement the user menu on the feature-menu branch. (FEATURE-MENU TEAMMATE)
+        // The same index identifies an item across all three arrays.
+        itemNames[0] = "Apple";
+        itemPrices[0] = 1.25;
+        itemStocks[0] = 10;
+
+        itemNames[1] = "Milk";
+        itemPrices[1] = 3.50;
+        itemStocks[1] = 5;
+
+        itemNames[2] = "Bread";
+        itemPrices[2] = 2.75;
+        itemStocks[2] = 8;
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nGrocery Management System");
+            System.out.println("1. View inventory");
+            System.out.println("2. Restock item");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+
+            if (!scanner.hasNextLine()) {
+                break;
+            }
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equals("3")) {
+                System.out.println("Goodbye");
+                break;
+            } else if (choice.equals("1")) {
+                printInventory(itemNames, itemPrices, itemStocks);
+            } else if (choice.equals("2")) {
+                System.out.print("Enter the item name (as shown in inventory): ");
+                if (!scanner.hasNextLine()) {
+                    break;
+                }
+                String target = scanner.nextLine().trim();
+
+                System.out.print("Enter the amount to add: ");
+                if (!scanner.hasNextLine()) {
+                    break;
+                }
+                int amount;
+                try {
+                    amount = Integer.parseInt(scanner.nextLine().trim());
+                } catch (NumberFormatException exception) {
+                    System.out.println("Please enter a positive whole number.");
+                    continue;
+                }
+
+                if (amount <= 0) {
+                    System.out.println("Please enter a positive whole number.");
+                    continue;
+                }
+                restockItem(itemNames, itemStocks, target, amount);
+            } else {
+                System.out.println("Please choose 1, 2, or 3.");
+            }
+        }
+        scanner.close();
     }
 
         /**
