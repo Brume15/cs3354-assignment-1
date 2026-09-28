@@ -5,3 +5,6 @@ Alexander Rivas (uql14 / SuiteChaoa)
 
 Vivi Villarreal-Perez (vvivi18v)
 - Completed the inventory display method and its Javadoc (09/28/2026)
+
+Christopher Preddie (Chris)
+- Added input validation module, Javadoc documentation, UML class diagram, and project testing/README setup (09/28/2026)
