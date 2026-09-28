@@ -9,7 +9,7 @@ public class GroceryManagementSystem {
     public static void main(String[] args) {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
-        int[] itemStocks = new int[10];
+        int[] itemStocks = new int[10];   
 
         // TODO: Implement the user menu on the feature-menu branch. (FEATURE-MENU TEAMMATE)
     }
@@ -23,6 +23,7 @@ public class GroceryManagementSystem {
             int[] stocks) {
 
         // TODO: Implement this method on the feature-display branch. (FEATURE-DISPLAY TEAMMATE)
+                        
     }
 
     /**
@@ -34,6 +35,16 @@ public class GroceryManagementSystem {
             String target,
             int amount) {
 
-        // TODO: Implement this method on the feature-restock branch. (FEATURE-RESTOCK TEAMMATE)
+        // TODO: Implement this method on the feature-restock branch. (Alexander uql14) COMPLETE
+
+        for(String name : names) {
+            if(name.equals(target)) {
+                int index = java.util.Arrays.asList(names).indexOf(name);
+                stocks[index] += amount;
+                System.out.println("Restocked " + amount + " units of " + target + ".");
+                return;
+            }
+        }
+        System.out.println("Item not found.");
     }
 }
