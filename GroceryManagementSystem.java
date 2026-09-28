@@ -56,7 +56,7 @@ public class GroceryManagementSystem {
         // TODO: Implement this method on the feature-restock branch. (Alexander uql14) COMPLETE
 
         for(String name : names) {
-            if(name.equals(target)) {
+            if( name != null && name.equals(target)) {
                 int index = java.util.Arrays.asList(names).indexOf(name);
                 stocks[index] += amount;
                 System.out.println("Restocked " + amount + " units of " + target + ".");
