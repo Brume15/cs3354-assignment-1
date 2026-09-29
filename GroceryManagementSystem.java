@@ -115,12 +115,13 @@ public class GroceryManagementSystem {
     
 
     /**
-     * Displays the grocery items stored in the parallel arrays.
-     * An item is displayed only when its name is not null.
+     * Restocks an existing grocery item by adding the specified amount 
+     * to its stock. prints a message if the item is not found.
      *
      * @param names  the names of the grocery items
-     * @param prices the price of each item at the matching index
      * @param stocks the stock of each item at the matching index
+     * @param target the name of the item to restock
+     * @param amount the amount to add to the stock of the target item
      */
     public static void restockItem(
             String[] names,
