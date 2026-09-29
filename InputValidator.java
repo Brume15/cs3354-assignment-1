@@ -1,15 +1,7 @@
 import java.util.Scanner;
 
-/**
- * Helper class providing input validation routines for the Grocery Management System.
- *
- * @author Chris
- */
 public class InputValidator {
 
-    /**
-     * Re-prompts the user until a valid integer within [min, max] is supplied.
-     */
     public static int getValidIntRange(Scanner scanner, int min, int max, String prompt) {
         int choice = -1;
         boolean valid = false;
@@ -18,6 +10,7 @@ public class InputValidator {
             System.out.print(prompt);
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
+                scanner.nextLine(); // Clear newline character from buffer
                 if (choice >= min && choice <= max) {
                     valid = true;
                 } else {
@@ -31,9 +24,6 @@ public class InputValidator {
         return choice;
     }
 
-    /**
-     * Re-prompts until a positive integer (> 0) is entered.
-     */
     public static int getPositiveInt(Scanner scanner, String prompt) {
         int amount = -1;
         boolean valid = false;
@@ -42,6 +32,7 @@ public class InputValidator {
             System.out.print(prompt);
             if (scanner.hasNextInt()) {
                 amount = scanner.nextInt();
+                scanner.nextLine(); // Clear newline character from buffer
                 if (amount > 0) {
                     valid = true;
                 } else {
