@@ -1,7 +1,13 @@
 import java.util.Scanner;
 
 /**
- * TODO: Add an appropriate Javadoc comment for this class.
+ * a simple grocery management system that allows users to view inventory
+ * and restock existing items. The inventory is represented using parallel
+ * arrays
+ * for item names, prices, and stock quantities. The system provides a
+ * menu-driven
+ * interface for users to interact with the inventory.
+ * 
  */
 public class GroceryManagementSystem {
 
@@ -109,7 +115,13 @@ public class GroceryManagementSystem {
     
 
     /**
-     * TODO: Add an appropriate Javadoc comment for this method.
+     * Restocks an existing grocery item by adding the specified amount 
+     * to its stock. prints a message if the item is not found.
+     *
+     * @param names  the names of the grocery items
+     * @param stocks the stock of each item at the matching index
+     * @param target the name of the item to restock
+     * @param amount the amount to add to the stock of the target item
      */
     public static void restockItem(
             String[] names,

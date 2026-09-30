@@ -8,6 +8,9 @@ Vivi Villarreal-Perez (vvivi18v)
 
 Christopher Preddie (Uei8)
 - -  Developed and integrated the InputValidator class for menu choice and restocking quantity validation, implemented Scanner buffer management, and conducted input validation testing.
+
+Bryce Hickey (hxn11 / bryceh23)
+- Completed Javadoc comments and generated docs/ folder (9/29/2026)
 ## Testing & Validation
 - **Menu Choice Validation (getValidIntRange):** Tested string inputs (abc) and out-of-bounds numbers (0, 5). Verified that the program re-prompts until a valid menu selection (1–4) is entered.
 - **Scanner Buffer Handling:** Tested entering an item name ("Bananas") directly after integer selection to verify scanner.nextLine()` flushes the buffer cleanly without skipping inputs.
